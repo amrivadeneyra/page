@@ -1,5 +1,8 @@
 import { zapatillas } from "./zapatillasModelo.js";
 
+// Mueve la declaración de carrito fuera del evento DOMContentLoaded
+const carrito = obtenerCarrito() || [];
+
 document.addEventListener("DOMContentLoaded", function () {
     const productosContainer = document.getElementById("productos-container");
 
@@ -27,14 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Agregar evento de clic al ícono del carrito
         const cartIcon = nuevoProducto.querySelector('.cart');
         cartIcon.addEventListener('click', () => agregarAlCarrito(index));
-
         productosContainer.appendChild(nuevoProducto);
     });
 });
 
+// Mueve la declaración de agregarAlCarrito fuera del evento DOMContentLoaded
 function agregarAlCarrito(index) {
+    console.log(`Producto agregado al carrito: ${index}`);
+
     const producto = zapatillas[index];
-    carrito.push({ ...producto, cantidad: 1 });
+    carrito.push({ ...producto });
     guardarCarrito(carrito);
 }
 
