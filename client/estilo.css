@@ -215,6 +215,8 @@ body{
 /* ****************** */
 .productos .fila{
     display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
     justify-content: space-evenly;
     margin-bottom: 30px;
 }
@@ -685,21 +687,21 @@ body{
     font-size: 20px;
     font-weight: bold;
 }
-.mi-carrito .productos-carrito .finalizar-compra{
+.mi-carrito .finalizar-compra{
     padding: 20px;
     text-align: center;
 }
-.mi-carrito .productos-carrito .finalizar-compra .monto{
+.mi-carrito .finalizar-compra .monto{
     font-size: 30px;
     font-weight: bold;
     margin: 10px 0;
 }
-.mi-carrito .productos-carrito .finalizar-compra .monto{
+.mi-carrito .finalizar-compra .monto{
     font-size: 30px;
     font-weight: bold;
     margin: 10px 0;
 }
-.mi-carrito .productos-carrito .finalizar-compra .btn-pagar{
+.mi-carrito .finalizar-compra .btn-pagar{
     width: auto;
     background-color: #000;
     color: #fdc20c;
