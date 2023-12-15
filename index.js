@@ -36,7 +36,15 @@ function agregarAlCarrito(index) {
     console.log(`Producto agregado al carrito: ${index}`);
 
     const producto = zapatillas[index];
-    carrito.push({ ...producto });
+
+    const productoExistente = carrito.find(item => item._id === producto._id);
+
+    if (productoExistente) {
+        productoExistente.cantidad++;
+    } else {
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
     guardarCarrito(carrito);
 }
 

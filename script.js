@@ -39,13 +39,13 @@ let nav = document.getElementById("nav");
 let close_responsive = document.getElementById("close-responsive");
 
 nav_responsive.onclick = function(){
-    if(menu_responsive_visible==false){
+    if(!menu_responsive_visible){
         nav.className = "menu-responsive";
         menu_responsive_visible = true;
     }
 }
 close_responsive.onclick = function(){
-    if(menu_responsive_visible==true){
+    if(menu_responsive_visible){
         nav.className = "";
         menu_responsive_visible = false;
     }
